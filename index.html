@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RealisticBubbles</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="bubbles">
+            <h2>bubbles</h2>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function createBubbles(){
+            const bubble = document.querySelector('.bubbles')
+
+            let newEle = document.createElement('span')
+
+            var size = Math.random()*60;
+            //console.log(20 + size + 'px');
+            newEle.style.width = 20 + size + 'px';
+            newEle.style.height = 20 + size + 'px';
+            newEle.style.left = Math.random()*innerWidth + "px";
+            bubble.appendChild(newEle);
+           setTimeout(()=>{
+            newEle.remove()
+           }, 2500);
+        }
+        setInterval(createBubbles,50);
+    </script>
+</html>
